@@ -10,8 +10,12 @@ from .serializers import RegisterSerializer, LoginSerializer
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
+    authentication_classes = []  
+    permission_classes = [] 
 
 class LoginView(generics.GenericAPIView):
+    authentication_classes = []
+    permission_classes = []
     serializer_class = LoginSerializer
 
     def post(self, request):
